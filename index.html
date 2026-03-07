@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mon Carnet de Notes</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playwrite+AU+TAS:wght@100..400&display=swap" rel="stylesheet">
+
+
+    <script>
+        // Bloque le rendu une fraction de seconde pour appliquer le bon thème direct
+        const theme = localStorage.getItem('theme') || (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+        document.documentElement.setAttribute('data-theme', theme);
+    </script>
+</head>
+<body>
+    <div class="contenu">
+        <div class="static" >
+            <div class="profil"> 
+                <div class="nom_theme"> 
+                    <h1>Timoté Godard</h1>  
+                    <button id="theme-toggle" class="theme-btn" aria-label="Changer le mode de couleur">
+                        <img id="theme-icon" src="images/sun.png" alt="Icône du thème">
+                    </button>
+                </div>
+                
+                <h2>Étudiant ingénieur en informatique</h2>
+                <h3>Developpeur pendant mon temps libre, j'aime faire de l'électronique, du développement web et de la modélisation 3D</h3>
+                <ul class = "liens">
+                    <li><a href = "#SeparateurProjetsEnCours">Projets en cours</a></li>
+                    <li><a href = "#SeparateurProjetsAcademiques">Projets Académiques</a></li>
+                    <li><a href = "#SeparateurProjetsPersonnels">Projets Personnels</a></li>
+                    
+                </ul>   
+            </div>
+            <div class="liste_tags">
+                <h2>Langages de Programmation</h2>
+                <ul class="tags">
+                    <li>Python<img src="images/python.png" alt="Python"></li>
+                    <li>JavaScript<img src="images/javascript.png" alt="JavaScript"></li>
+                    <li>HTML<img src="images/html.png" alt="HTML"></li>
+                    <li>CSS<img src="images/css.png" alt="CSS"></li>
+                    <li>C++<img src="images/c++.png" alt="C++"></li>
+                    <li>PHP<img src="images/Php.png" alt="PHP"></li>
+                    <li>React js<img src="images/reactjs.png" alt="React.js"></li>
+                    <li>Node js<img src="images/nodejs.png" alt="Node.js"></li>
+                    
+                    
+                </ul>
+
+                <h2>Outils</h2>
+                <ul class="tags">
+                    <li>Git<img src="images/Git.png" alt="Git"></li>
+                    <li>Fusion 360 <img src="images/fusion360.png" alt="Fusion 360"></li>
+                    <li>MySQL<img src="images/mysql.png" alt="MySQL"></li>
+                </ul>
+            </div>
+
+            <div class="reseaux">
+                <img src="images/linkedin.png" alt="linkedin">
+                <img src="images/instagram.png" alt="instagram">
+                <img src="images/github.png" alt="github">
+                
+            </div>
+        </div>
+
+        
+
+        <div class = "liste_projets">
+
+            <div class = "projets_en_cours section-projets">
+                <div class = "separateur-categorie" id="SeparateurProjetsEnCours">Projets en cours</div>
+
+                <a href="https://azaggal.github.io/vocab/" target="_blank" class="lien-cliquable projet" data-tags="React js, Node js">
+                        <p class = "titre_projet">Ent Rennes Remake</p>
+                        
+                        <div class = "img_desc">
+                            <div class = "img_date">
+                                <img src="images/projets/clavier.jpg" alt="image_projet1">
+                                <p class = "date_projet">Février 2026</p>
+                            </div>
+
+                            <div class="desc_tag">
+                                <p class = "description_projet">Dans le but de créer une expérience plus adaptée aux utilisateurs j'ai commencé le projet de refaire l'ent de l'université de Rennes, lorsqu'un un utilisateur à besoin d'une information normalement disponible sur son ent, le server fait la demande via le cookie généré lors de la première connexion à la page</p>
+                                
+                            
+                                <ul class = "tags">
+                                </ul>   
+                            </div>
+                        </div>
+
+                </a>
+
+                <a href="https://azaggal.github.io/vocab/" target="_blank" class="lien-cliquable projet" data-tags="React js, Node js">
+                        <p class = "titre_projet">Site de quiz entre amis</p>
+                        
+                        <div class = "img_desc">
+                            <div class = "img_date">
+                                <img src="images/projets/clavier.jpg" alt="image_projet1">
+                                <p class = "date_projet">Janvier 2026</p>
+                            </div>
+
+                            <div class="desc_tag">
+                                <p class = "description_projet">Dans le but de créer une expérience plus adaptée aux utilisateurs j'ai commencé le projet de refaire l'ent de l'université de Rennes, lorsqu'un un utilisateur à besoin d'une information normalement disponible sur son ent, le server fait la demande via le cookie généré lors de la première connexion à la page</p>
+                                
+                            
+                                <ul class = "tags">
+                                </ul>   
+                            </div>
+                        </div>
+
+                </a>
+
+
+            </div>
+            
+            <div class = "projets_academiques section-projets">
+
+                <div class = "separateur-categorie" id="SeparateurProjetsAcademiques">Projets Académiques</div>
+
+
+                <div class = "projet" data-tags="C++">
+                    <p class = "titre_projet">Nonogram sur une Arduino Uno</p>
+                    
+                    <div class = "img_desc">
+                        <div class = "img_date">
+                            <img src="images/projets/nonogram.png" alt="image_projet1">
+                            <p class = "date_projet">Octobre 2025</p>
+                        </div>
+
+                        <div class="desc_tag">
+                            <p class = "description_projet">Nous avons mené un projet libre en électronique que nous devions documenter dans un compte rendu, j'ai choisi de faire un nonogramme sur une Arduino Uno, c'est un jeu auquel mon partenaire de travail jouait beaucoup. Nous avionc donc brancher un écran lcd tactile à une arduino uno et ainsi programmer en C ce jeu.</p>
+                            
+                        
+                            <ul class = "tags">
+                            </ul>   
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+                
+
+
+                
+
+                
+
+
+                <div class = "projet" data-tags="HTML, CSS, PHP, MYSQL">
+                    <p class = "titre_projet">Pokédex</p>
+                    
+                    <div class = "img_desc">
+                        <div class = "img_date">
+                            <img src="images/projets/pokedex.png" alt="image_projet1">
+                            <p class = "date_projet">Avril 2025</p>
+                        </div>
+
+                        <div class="desc_tag">
+                            <p class = "description_projet">Dans le cadre de mes études en école préparatoire à l'ÉSIR nous avons eu l'occasion de mener 
+                                un projet où nous devions créer un site web représentant un pokédex (liste de pokémons et de leurs capacités). Nous avons 
+                                donc utilisé de l'html et du css pour le site web. Nous avons utilisé du PHP et MySQL pour la base de données. On a également 
+                                pour consignes de créer une option pour s'inscrire sur le site, se connecter et gérer une session</p>
+                            
+                        
+                            <ul class = "tags">
+                            </ul>   
+                        </div>
+                    </div>
+                    
+                </div>
+
+                <a href="https://github.com/Azaggal/guitare-en-clavier" target="_blank" class="lien-cliquable projet" data-tags="C++">
+                        <p class = "titre_projet">Convertir le signal d'une guitare en touche de clavier</p>
+                        
+                        <div class = "img_desc">
+                            <div class = "img_date">
+                                <img src="images/projets/guitare.png" alt="image_projet1">
+                                <p class = "date_projet">Avril 2025</p>
+                            </div>
+
+                            <div class="desc_tag">
+                                <p class = "description_projet"></p>
+                                
+                            
+                                <ul class = "tags">
+                                </ul>   
+                            </div>
+                        </div>
+                </a>  
+
+                <a href="https://github.com/Azaggal/pygame" target="_blank" class="lien-cliquable projet" data-tags="Python,  GIT"> 
+
+                    <p class = "titre_projet">Jeu en Pygame</p>
+                    
+                    <div class = "img_desc">
+                        <div class = "img_date">
+                            <img src="images/projets/pygame.png" alt="image_projet1">
+                            <p class = "date_projet">Décembre 2024</p>
+                        </div>
+
+                        <div class="desc_tag">
+                            <p class = "description_projet">Afin de découvrir la création de jeu, j'ai choisi l'option informatique en deuxième année de prépa. Dans ce cours nous avons utilisé Python et plus particulièrement la bibliothèque Pygame pour créer notre premier jeu. Nous étions en groupe de 5 et nous travaillions sur le même code, nous avons donc également appris à utiliser git pour faciliter ce travail de groupe </p>
+                            
+                        
+                            <ul class = "tags">
+                            </ul>   
+                        </div>
+                    </div>
+                    
+                
+
+                </a>
+                
+
+            
+            </div>
+
+            
+            
+
+                <div class = "projets_personnels section-projets">
+                    <div class = "separateur-categorie" id="SeparateurProjetsPersonnels">Projets Personnels</div>
+                    
+                    <a href="https://azaggal.github.io/vocab/" target="_blank" class="lien-cliquable projet" data-tags="Fusion 360">
+                        <p class = "titre_projet">Création de clavier handwired</p>
+                        
+                        <div class = "img_desc">
+                            <div class = "img_date">
+                                <img src="images/projets/clavier.jpg" alt="image_projet1">
+                                <p class = "date_projet">Octobre 2025</p>
+                            </div>
+
+                            <div class="desc_tag">
+                                <p class = "description_projet">Je voulais me construire un petit clavier pièce par pièce mais c'est très cher, j'ai donc préféré le faire entièrement moi même, pour cela j'ai utilisé fusion360 pour le modéliser, j'ai récupérer un layout (disposition des touches du clavier) sur internet qui me plaisait, j'en ai modélisé une plaque pour ajouter les switches, que j'ai soudé entre-eux, le tout que j'ai soudé à une raspberry pico usb-c que j'ai ensuite programmé avec VIA, un logiciel open source pour créer des claviers et qui m'a permis d'associer chaque touche à une lettre</p>
+                                
+                            
+                                <ul class = "tags">
+                                </ul>   
+                            </div>
+                        </div>
+
+                </a>
+
+                <a href="https://github.com/Azaggal/keyboard-handwired-without-soldering" target="_blank" class="lien-cliquable projet" data-tags="">
+
+                        <p class = "titre_projet">Création d'un pavé numérique sans souder</p>
+                        
+                        <div class = "img_desc">
+                            <div class = "img_date">
+                                <img src="images/image1.jpg" alt="image_projet1">
+                                <p class = "date_projet">Janvier 2025</p>
+                            </div>
+
+                            <div class="desc_tag">
+                                <p class = "description_projet">Après avoir eu mes premiers cours de tp d'électronique où nous avons utilisé un écran lcd, j'ai voulu faire mon propre projet, j'ai donc créé un pavé numérique avec écran intégré mais sans souder, n'ayant pas le matériel nécessaire pour cela. J'ai donc modélisé mon boitier sur TinkerCad et j'ai utilisé une raspberry pico comme microcontrolleur, j'ai utilisé le logociel CircuitPython pour configurer chaque touche à une lettre</p>
+                                
+                            
+                                <ul class = "tags">
+                                </ul>   
+                            </div>
+                        </div>
+
+                </a>
+
+
+                <a href="https://azaggal.github.io/vocab/" target="_blank" class="lien-cliquable projet" data-tags="HTML, CSS, JavaScript">
+                        <p class = "titre_projet">Site de Révision</p>
+                        
+                        <div class = "img_desc">
+                            <div class = "img_date">
+                                <img src="images/projets/vocab.png" alt="image_projet1">
+                                <p class = "date_projet">Novembre 2025</p>  
+                            </div>
+
+                            <div class="desc_tag">
+                                <p class = "description_projet">J'ai eu besoin d'apprendre une liste de mot de vocabulaire pour une évaluation d'anglais, j'ai donc créé un site pour m'aider à cela, grâce à github, et son hébergement gratuit, j'ai pu le partager à tous mes amis. Chaque utilisateur à pu modiifier le site à sa guise car j'ai stocké les paramètres dans le local storage, également j'ai ajouté une gestion d'un csv pour la base de donnée du vocabulaire</p>
+                                
+                            
+                                <ul class="tags"></ul>
+                            </div>
+                        </div>
+                </a>
+
+                <div class = "projet" data-tags="Python">
+                    <p class = "titre_projet">5e place au concours Break The Code</p>
+                    
+                    <div class = "img_desc">
+                        <div class = "img_date">
+                            <img src="images/projets/breakTheCode.png" alt="image_projet1">
+                            <p class = "date_projet">Novembre 2025</p>
+                        </div>
+
+                        <div class="desc_tag">
+                            <p class = "description_projet">C'est une compétition organisé par Sopra Steria où le but est de résoudre des problèmes algorithmiques en utilisant des langages de programmation comme Python ou Java. Il faut résoudre le plus de problèmes possible par groupe de 3 en 1h30</p>
+                            
+                        
+                            <ul class = "tags">
+                            </ul>   
+                        </div>
+                    </div>
+                    
+                </div>
+
+
+
+
+                <a href="https://github.com/Azaggal/pygame" target="_blank" class="lien-cliquable projet" data-tags="Python, Git">
+                    <p class = "titre_projet">2e place à la GameJam ESIR édition 2025</p>
+                    
+                    <div class = "img_desc">
+                        <div class = "img_date">
+                            <img src="images/projets/gamejam.png" alt="image_projet1">
+                            <p class = "date_projet">Mars 2025  </p>
+                        </div>
+
+                        <div class="desc_tag">
+                            <p class = "description_projet">Dans cette compétition nous devions créer en 48h un jeu vidéo par équipe de 3, un thème était imposé et le langage de programmation était libre. J'ai décidé de choisir Python car j'ai réaliser le projet Pygame plus tot dans l'année, ce fut ma première expérience de création de jeu vidéo, naturelement j'ai donc utiliser le même langage, Python</p>
+                            
+                        
+                            <ul class="tags"></ul>
+                        </div>
+                    </div>
+                    
+                </div>
+                </a>
+            
+        </div>
+
+        
+        
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>

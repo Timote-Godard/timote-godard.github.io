@@ -1,0 +1,538 @@
+:root {
+    --text-main: #1a1a1a;
+    --text-secondary: #555555;
+    --text-third: rgba(70, 70, 70, 0.6);
+    /* --font-general: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; */
+    --font-general:"Playwrite AU TAS", cursive;
+
+    --bg-color: #F5F5F0;
+    --projet_hover-bg: rgba(70, 70, 70, 0.1);
+}
+
+
+[data-theme="dark"] {
+  --bg-color: #0f172a;
+  --text-main: #f1f5f9;
+  --text-secondary: #a1a1a1;
+  --projet_hover-bg: rgba(180, 180, 180, 0.3);
+  --text-third : rgba(200, 200, 200, 0.6);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg-color: #0f172a;
+    --text-main: #f1f5f9;
+    --text-secondary: #a1a1a1;
+    --text-third : rgba(200, 200, 200, 0.6);
+  }
+}
+
+body {
+    background-color: var(--bg-color);
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+    color: var(--text-main);
+    font-family: var(--font-general);
+    margin: 0;
+    padding: 0;
+    
+}
+
+
+/* On applique une transition sur les couleurs de fond et de texte */
+body, .sidebar, .project-card, section {
+    transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+.profil {
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border: 3px solid var(--text-main);
+    border-radius: 255px 15px 225px 15px / 15px 225px 15px 255px;
+    display: inline-block;
+    
+    width : 100%;
+    max-width: 600px;
+
+    padding-bottom: 30px;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 20px;
+    font-family : var(--font-general);
+    height: max-content;
+    box-sizing: border-box;
+}
+
+.nom_theme {
+    display: flex;
+    align-items: center;
+}
+
+
+
+.static {    
+    position: fixed;
+    margin-left: 100px;
+    margin-top: 50px;
+}
+
+.reseaux {
+    margin-top: 20px;
+    
+    width: 400px;
+    padding-left: 100px;
+}
+
+.reseaux img:hover {
+    opacity: 1;
+    cursor: pointer;
+}
+
+.reseaux img {
+    width: 50px;
+    opacity: 0.5;
+    transition: opacity 0.4s ease;
+    margin-right: 20px;
+}
+
+
+.liste_tags {
+    background-image: url("https://www.transparenttextures.com/patterns/cardboard.png");
+    background-color: var(--bg-color);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px;
+    border: 3px solid var(--text-main);
+    border-radius: 15px 225px 15px 255px / 255px 15px 225px 15px;
+    padding: 19px;
+    padding-top: 0px;
+    padding-left: 30px;
+    width : 100%;
+    max-width: 650px;
+    box-sizing: border-box;
+}
+
+.liste_tags ul {
+    padding-bottom: 25px;
+    
+}
+
+.liste_tags h2 {
+    padding-top: 25px;
+    
+}
+
+#theme-icon {
+    width: 30px;
+    transition: filter 0.5s ease; /* Animation fluide du changement de couleur */
+    filter: invert(0);             /* Par défaut (noir) */
+}
+
+[data-theme="dark"] #theme-icon {
+    filter: invert(1);             /* Inverse les couleurs : le noir devient blanc */
+}
+
+
+
+.projet p {
+    margin: 0;
+}       
+
+
+.liste_tags .tags {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.liste_tags .tags li {
+    cursor: pointer;
+    opacity: 0.5;             /* Rendu un peu transparent */
+    transition: transform 0.3s ease, opacity 0.4s ease, background-color 0.2s ease; /* Anime l'opacité et la taille */
+    transform: scale(1);       /* Taille normale */
+    background-color: var(--bg-color); 
+}
+
+.liste_tags .tags li.active{
+    opacity: 1;
+    transform: scale(1.1);
+    background-color: var(--projet_hover-bg);
+    padding: 5px;
+}
+
+.liste_tags .tags li:active{
+    transform: scale(0.95);
+}
+
+.liste_tags .tags li.active:active{
+    transform: scale(1.05);
+}
+
+.liste_tags .tags li:hover {
+    background-color: var(--projet_hover-bg);
+    cursor: pointer;
+}
+
+.titre_projet {
+    font-size: 24px;
+    padding-bottom: 5px;
+    font-weight: bold;
+    color: var(--text-main);
+}
+
+.theme-btn {
+    background: none;    /* Supprime le fond gris */
+    border: none;        /* Supprime la bordure */
+    padding: 0;          /* Supprime les espaces internes */
+    cursor: pointer;     /* Ajoute la main au survol */
+    outline: none;       /* Supprime le contour bleu au clic */
+    margin-left: 20px;
+}
+
+.theme-btn img {
+    display: block;      /* Évite les espaces vides sous l'image */
+    width: 50px;         /* Ajuste la taille selon tes besoins */
+    height: auto;
+}
+
+.tags li img {
+    width: 20px;
+    height: 20px;
+    margin-left: 5px;
+    vertical-align: middle;
+}
+
+li {
+    font-size:15px;
+}
+
+.projet img {
+    max-width: 200px;
+    width: auto;
+    height: max-content;
+    max-height: 150px;
+    
+    border-radius: 10px;
+}
+
+.projet .img_desc {
+    display: flex;
+}
+
+.projet.hidden {
+    opacity: 0;
+    transform: rotateX(-90deg); /* Le projet pivote à 90° vers l'arrière */
+    max-height: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+    pointer-events: none;
+}
+
+.projet.hidden + .separateur {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+.separateur-categorie.hidden {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+.separateur-categorie {
+    height: 40px;
+    width: 800px;
+    margin: 60px auto;
+    background-color: var(--projet_hover-bg);
+    opacity: 0.6;
+    /* Bords déchirés avec clip-path */
+    clip-path: polygon(2% 0%, 98% 2%, 100% 100%, 0% 95%);
+    transform: rotate(-1deg);
+    font-size: 30px;
+    color : var(--text-main);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px dashed var(--text-third);
+
+    transition: 
+        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+        opacity 0.4s ease, 
+        margin 0.7s;
+}
+
+.separateur:has(+ .projet.hidden) {
+    opacity: 0;
+    max-height: 0;
+    margin: 0;
+    padding: 0;
+    pointer-events: none;
+}
+
+
+.projet {
+
+    padding: 20px;
+    border-radius: 5px;
+    font-family: var(--font-general);
+    
+    /* On définit le point d'attache en haut pour que le projet se replie vers le haut */
+    transform-origin: top;
+    
+    /* Animation fluide de 0.6s avec une courbe de vitesse naturelle */
+    transition: 
+        transform 0.6s cubic-bezier(0.4, 0, 0.2, 1), 
+        opacity 0.4s ease, 
+        max-height 0.7s ease-in-out,
+        background-color 0.2s ease,
+        margin 0.7s;
+
+    max-height: 2000px; /* Doit être supérieur à la taille réelle du projet */
+    opacity: 1;
+    transform: rotateX(0deg);
+    overflow: hidden; /* Important pour que le contenu disparaisse au pliage */
+}
+
+.date_projet {
+    padding-top: 10px;
+    font-size: 20px;
+    width: max-content;
+    color: var(--text-third);
+    
+}
+
+.img_date {
+    margin-top: 10px;
+    margin-right: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.separateur {
+    height: 3px;
+    background: linear-gradient(90deg, 
+        transparent, 
+        var(--text-main) 5%, 
+        var(--text-main) 100%, 
+        transparent
+    );
+    /* On ajoute un masque pour créer des micro-coupures dans le trait */
+    
+    border-radius: 50% 20% 50% 10%;
+    opacity: 0.6;
+    margin: 25px 10px;
+}
+
+
+
+.projet ul {
+    margin-top: 10px;
+    display: flex;
+}
+
+.tags li {
+    border : 2px solid var(--text-main);
+    border-radius: 25px 15px 25px 15px / 15px 25px 15px 25px;
+    
+    margin-top: 10px;
+    width : max-content;
+    margin-left: 20px;
+    padding: 5px;
+}
+
+.lien-cliquable:hover {
+    background-color: var(--projet_hover-bg);
+    cursor: pointer;
+    text-decoration: none; 
+}
+
+
+
+.projet li {
+    cursor: default;
+    
+}
+
+.lien-cliquable {
+    display: block;
+}
+
+.liste_projets {
+    width : 100%;
+    padding-left: 850px;
+    padding-top: 0px;
+    padding-right: 70px;
+    box-sizing: border-box;
+}
+
+.profil .liens a {
+    position: relative;
+    display: inline-block;
+    transform-origin: left;
+    text-decoration: none;
+    padding-bottom: 2px; /* Espace pour le trait */
+    transition: transform 0.4s ease, color 0.3s ease;
+}
+
+/* On crée le trait "fait main" invisible par défaut */
+.profil .liens a::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 90%;
+    height: 3px;
+    background-color: var(--text-main);
+    
+    /* On applique ton border-radius irrégulier ici */
+    border-radius: 50% 20% 50% 10%; 
+    
+    /* Animation de départ : largeur zéro et origine à gauche */
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+    opacity: 0.7;
+}
+
+/* Quand le lien devient actif (via ton Intersection Observer ou hover) */
+.profil .liens a.active-link::after {
+    transform: scaleX(1);
+}
+
+/* État quand on survole ou quand la section est active */
+.profil .liens a:hover, 
+.profil .liens a.active-link {
+    transform: scale(1.15); /* Agrandissement fluide */
+    color: var(--text-main);
+    font-weight: bold;
+}
+
+
+.section-projets {
+    width: 100%;
+}
+
+
+
+.contenu {
+    display:flex;
+}
+
+.profil ul {
+    padding-top: 20px;
+    padding-left: 20px;
+    width: max-content;
+}
+
+
+ul {
+  list-style-type: none; /* Supprime les puces */
+  padding: 0;           /* Optionnel : retire l'indentation par défaut */
+  margin: 0;            /* Optionnel : retire les marges par défaut */
+}
+
+a {
+  text-decoration: none; /* Supprime le soulignage */
+  color: inherit;        /* Le lien prend la couleur du texte parent (au lieu du bleu) */
+}
+
+/* Optionnel : ajouter un effet au survol pour l'accessibilité */
+a:hover {
+  color: var(--text-secondary);
+}
+
+h1 {
+    margin: 0;
+    color: var(--text-main);
+    font-size: 40px;
+    font-weight: bold;
+}
+
+h2 {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size:24px;
+}
+
+.description_projet {
+    font-size: 15px;
+}
+
+/* Media Query for Mobile and Tablets */
+@media (max-width: 1100px) {
+    .contenu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .static {
+        position: static;
+        margin: 20px auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 95%;
+    }
+
+    .profil, .liste_tags, .liste_projets {
+        width: 100% !important;
+        max-width: 650px;
+        margin-left: 0 !important;
+        padding-left: 20px !important;
+        padding-right: 20px !important;
+        box-sizing: border-box;
+    }
+
+    .liste_projets {
+        padding-top: 50px;
+    }
+
+    .separateur-categorie {
+        width: 100%;
+        font-size: 24px;
+        margin: 40px auto;
+    }
+
+    .reseaux {
+        width: auto;
+        padding-left: 0;
+        margin-top: 30px;
+        justify-content: center;
+        display: flex;
+    }
+
+    .projet .img_desc {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .img_date {
+        margin-right: 0;
+        margin-bottom: 15px;
+    }
+
+    .projet ul.tags {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    .tags li {
+        margin-left: 10px;
+        margin-right: 10px;
+    }
+
+    h1 {
+        font-size: 24px;
+    }
+
+    .theme-btn img {
+        width: 40px;
+    }
+}
