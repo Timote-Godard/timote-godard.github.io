@@ -422,6 +422,7 @@ li {
 
 .contenu {
     display:flex;
+    margin-bottom: 100px;
 }
 
 .profil ul {
@@ -458,6 +459,53 @@ h2 {
     margin: 0;
     color: var(--text-secondary);
     font-size:24px;
+}
+
+#indications {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+.lancerProjet, .github {
+    border-radius: 25px 15px 25px 15px / 15px 25px 15px 25px;
+    margin-top: 10px;
+    width : max-content;
+    padding: 5px;
+    cursor: pointer;
+    font-family: var(--font-general);
+}
+
+.lancerProjet:hover {
+    background-color: rgba(139, 0, 0, 0.1);
+    border : 2px solid rgb(199, 1, 1);
+}
+
+.ligneExplication {
+    display: flex;
+    flex-direction: row;
+}
+
+.lancerProjet {
+    border : 2px solid red;
+    background-color: rgba(255, 0, 0, 0.1);
+}
+
+.github {
+    border : 2px solid rgba(0, 17, 255, 0.596);
+    background-color: rgba(17, 0, 255, 0.1);
+}
+
+.github:hover {
+    background-color: rgba(0, 25, 139, 0.1);
+    border : 2px solid rgb(37, 1, 199);
+}
+
+h4 {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size:18px;
 }
 
 .description_projet {
